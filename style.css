@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-padding: 5px;
+    --main-radius:5px;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 0.8fr;
+    grid-template-areas:"nav nav nav nav"
+                        "sidebar main2 main2 main2"
+                        "sidebar content1 content2 content3"
+                        "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+    padding: var(--main-padding);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+nav{
+    background: #a7ffeb;
+    grid-area: nav;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+main{
+    background: #a7ffeb;
+    grid-area: main2;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+.sideBar{
+    background: #18ffff;
+    grid-area: sidebar;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+.content1{
+    background:#6fffd2 ;
+    grid-area: content1;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+.content2{
+    background: #6fffd2 ;
+    grid-area: content2;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+.content3{
+    background: #73ffba;
+    grid-area: content3;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+footer{
+background: #1de9b6 ;
+grid-area: footer;
+padding: var(--main-padding);
+border-radius: var(--main-radius);
+}
+
+@media only screen and (max-width: 670px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.8fr 1fr 1fr 1fr 1fr 0.8fr;
+        grid-template-areas: "nav"
+                            "sidebar"
+                            "main2"
+                            "content1"
+                            "content2"
+                            "content3"
+                            "footer";
+        min-height: 100vh;
+    }
+}
